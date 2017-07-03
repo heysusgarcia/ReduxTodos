@@ -12,5 +12,5 @@ window.allTodos = allTodos;
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  ReactDOM.render(<Root />, document.getElementById('content'));
+  ReactDOM.render(<Root store={configureStore}/>, document.getElementById('content'));
 });
