@@ -4,19 +4,25 @@ class TodoListItem extends React.Component {
   constructor(props) {
     super(props)
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleDone = this.handleDone.bind(this);
   }
 
-  handleClick(todo) {
+  handleDelete(todo) {
     this.props.removeTodo(this.props.todo);
   }
 
+  handleDone(todo) {
+
+  }
+
   render() {
-    const todo = this.props.todo
+    const { todo, receiveTodo, removeTodo } = this.props;
     return (
       <li>
        {todo.title}
-       <button onClick={this.handleClick}>Delete</button>
+       <button onClick={this.handleDone}>{todo.done ? "Done" : "Undone"}</button>
+       <button onClick={this.handleDelete}>Delete</button>
       </li>
     )
 }

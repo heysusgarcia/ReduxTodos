@@ -11,7 +11,7 @@ class TodoList extends React.Component {
        key={`todo-list-item${todo.id}`}
        todo={todo}
        receiveTodo={ receiveTodo }
-       removeTodo={ () => { removeTodo(todo) } }/>
+       removeTodo={ removeTodo }/>
     )
   );
 
