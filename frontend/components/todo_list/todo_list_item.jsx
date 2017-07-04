@@ -27,7 +27,7 @@ class TodoListItem extends React.Component {
     const { todo, receiveTodo, removeTodo } = this.props;
 
     return (
-      <li>
+      <li className='todo-list-item-view'>
        <div
         onClick={this.toggleDetailView}>
         {todo.title}
