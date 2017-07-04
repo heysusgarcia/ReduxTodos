@@ -1,18 +1,22 @@
 import React from 'react';
-import StepListItem from './step_list_item';
+import StepListItemContainer from './step_list_item_container';
 import StepForm from './step_form';
 
-class StepList extends React.Component {
-  render() {
-    return (
-      <div>
-        <ul>
-          <StepListItem/>
+const StepList = ({ steps, todo_id, receiveStep }) =>{
+  const stepItems = steps.map(step => (
+    <StepListItemContainer
+     key={step.id}
+     step={step} />
+   ));
+
+   return (
+     <div>
+        <ul className="step-list">
+          { stepItems }
         </ul>
         <StepForm />
       </div>
     )
-  }
-}
+  };
 
 export default StepList;
