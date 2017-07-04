@@ -5,7 +5,7 @@ import stepsReducer from './steps_reducer';
 
 const RootReducer = combineReducers({
   todos: todosReducer,
-  steps: stepsReducers
+  steps: stepsReducer
 });
 
 export default RootReducer;
