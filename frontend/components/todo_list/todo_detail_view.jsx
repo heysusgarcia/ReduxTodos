@@ -27,6 +27,6 @@ class TodoDetailView extends React.Component {
       </div>
     )
   }
-}
+};
 
 export default TodoDetailView;
