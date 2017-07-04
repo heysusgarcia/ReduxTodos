@@ -1,10 +1,10 @@
 import React from 'React';
+import TodoDetailView from './todo_detail_view';
 import merge from 'lodash/merge';
 
 class TodoListItem extends React.Component {
   constructor(props) {
     super(props)
-    this.handleDelete = this.handleDelete.bind(this);
     this.toggleDone = this.toggleDone.bind(this);
   }
 
@@ -29,7 +29,10 @@ class TodoListItem extends React.Component {
        <button
         className={ todo.done ? "done" : "undone" }
         onClick={this.toggleDone}>{todo.done ? "Undo" : "Done"}</button>
-       <button onClick={this.handleDelete}>Delete</button>
+
+        <TodoDetailView
+          todo={todo}
+          removeTodo={removeTodo}/>
       </li>
     )
 }
