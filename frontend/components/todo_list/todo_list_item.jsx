@@ -5,11 +5,10 @@ import merge from 'lodash/merge';
 class TodoListItem extends React.Component {
   constructor(props) {
     super(props)
-    this.toggleDone = this.toggleDone.bind(this);
-  }
+    this.state = { detail: false };
 
-  handleDelete(todo) {
-    this.props.removeTodo(this.props.todo);
+    this.toggleDone = this.toggleDone.bind(this);
+    this.toggleDetailView = this.toggleDetailView.bind(this);
   }
 
   toggleDone(e) {
@@ -17,7 +16,11 @@ class TodoListItem extends React.Component {
     const done = { done : !this.props.todo.done };
     const updatedTodo = merge({}, this.props.todo, done);
     this.props.receiveTodo(updatedTodo);
+  }
 
+  toggleDetailView(e) {
+    e.preventDefault();
+    this.setState({detail: !this.state.detail});
   }
 
   render() {
@@ -25,14 +28,19 @@ class TodoListItem extends React.Component {
 
     return (
       <li>
-       {todo.title}
+       <div
+        onClick={this.toggleDetailView}>
+        {todo.title}
+       </div>
+
        <button
         className={ todo.done ? "done" : "undone" }
         onClick={this.toggleDone}>{todo.done ? "Undo" : "Done"}</button>
 
         <TodoDetailView
           todo={todo}
-          removeTodo={removeTodo}/>
+          removeTodo={removeTodo}
+          detail={this.state.detail}/>
       </li>
     )
 }
