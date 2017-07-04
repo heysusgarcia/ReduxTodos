@@ -12,9 +12,16 @@ class TodoDetailView extends React.Component {
   }
 
   render() {
-    const todo = this.props.todo;
+    const { todo, detail } = this.props;
+    let klass = '';
+
+    if (detail) {
+      klass = ' is-active';
+    }
+    klass = `todo-detail-view${klass}`;
+
     return (
-      <div className="todo-detail-view">
+      <div className={klass}>
         {todo.body}
         <button onClick={this.handleDelete}>Delete</button>
       </div>

@@ -1,0 +1,7 @@
+.todo-detail-view {
+  display: none;
+}
+
+.todo-detail-view.is-active {
+  display: block;
+}
