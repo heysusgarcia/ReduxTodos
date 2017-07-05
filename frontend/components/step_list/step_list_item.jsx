@@ -1,21 +1,29 @@
 import React from 'react';
+import merge from 'lodash/merge';
 
 class StepListItem extends React.Component {
   constructor(props) {
     super(props);
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.toggleStep = this.toggleStep.bind(this);
   }
 
   handleDelete(e) {
     e.preventDefault();
+    debugger;
     this.props.removeStep(this.props.step);
+  }
 
+  toggleStep(e) {
+    e.preventDefault();
+    const done = { done: !this.props.step.done };
+    const updatedStep = merge({}, this.props.step, done);
+    this.props.receiveStep(updatedStep);
   }
 
   render() {
-    debugger;
-    const step = this.props;
+    const step = this.props.step;
     return (
       <li className="step-header">
         <p className="step-title"> { step.title } </p>
@@ -23,7 +31,8 @@ class StepListItem extends React.Component {
 
         <div>
           <button
-           className={ step.done ? "done" : "undone" }>
+           className={ step.done ? "done" : "undone" }
+           onClick={this.toggleStep}>
            { step.done? "Undo" : "Done" }
           </button>
 
