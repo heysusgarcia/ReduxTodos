@@ -11,7 +11,6 @@ class StepListItem extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    debugger;
     this.props.removeStep(this.props.step);
   }
 
