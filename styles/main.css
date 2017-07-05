@@ -49,10 +49,35 @@ body {
   font-weight: bold;
 }
 
-.button {
-  margin: 3px;
-}
-
 .step-list {
   list-style: none;
 }
+
+button {
+  border-radius: 2px;
+  font-size: 14px;
+  border: none;
+}
+
+.delete-button {
+  background-color: #f44336;
+}
+
+.create-button {
+  background-color: #008CBA;
+}
+
+.done {
+  background-color: #e7e7e7;
+}
+
+h3 {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/*.todo-body {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}*/

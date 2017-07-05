@@ -31,11 +31,12 @@ class TodoListItem extends React.Component {
        <span
         className="todo-header">
         <h3
-         onClick={this.toggleDetailView}>
+         onClick={this.toggleDetailView}
+         className={}>
          {todo.title}
         </h3>
       <button
-       className={ todo.done ? "button done" : "button undone" }
+       className={ todo.done ? "done" : "undone" }
        onClick={this.toggleDone}>{todo.done ? "Undo" : "Done"}
       </button>
     </span>

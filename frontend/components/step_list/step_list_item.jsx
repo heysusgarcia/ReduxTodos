@@ -36,7 +36,7 @@ class StepListItem extends React.Component {
           </button>
 
           <button
-           className="button delete-button"
+           className="delete-button"
            onClick={this.handleDelete}>
            Delete
            </button>
