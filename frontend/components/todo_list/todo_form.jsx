@@ -29,7 +29,7 @@ class TodoForm extends React.Component {
     const id = uniqueId();
     const { title, body } = this.state;
 
-    const todo = { id, title, body };
+    const todo = { id, title, body, done: false };
     this.props.receiveTodo(todo);
   }
 
@@ -38,16 +38,14 @@ class TodoForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Title:
-          <input type="text" value={title} onChange={this.setTitle} />
+          <input type="text" placeholder="Title" value={title} onChange={this.setTitle} />
         </label>
         <br />
         <label>
-          Body:
-          <input type="text" value={body} onChange={this.setBody} />
+          <input type="text" placeholder="Body" value={body} onChange={this.setBody} />
         </label>
         <br/>
-        <input type="submit" value="Submit" />
+        <button className="create-button">Create Todo</button>
       </form>
     )
   }

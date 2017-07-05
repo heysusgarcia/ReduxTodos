@@ -14,7 +14,7 @@ const StepList = ({ steps, todo_id, receiveStep }) =>{
         <ul className="step-list">
           { stepItems }
         </ul>
-        <StepForm todo={ todo_id } receiveStep={ receiveStep }/>
+        <StepForm todo_id={ todo_id } receiveStep={ receiveStep }/>
       </div>
     )
   };
