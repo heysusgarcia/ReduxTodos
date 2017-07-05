@@ -40,17 +40,19 @@ class TodoForm extends React.Component {
   render() {
     const { title, body } = this.props;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <input type="text" placeholder="Title" value={title} onChange={this.setTitle} />
-        </label>
-        <br />
-        <label>
-          <input type="text" placeholder="Body" value={body} onChange={this.setBody} />
-        </label>
-        <br/>
-        <button className="create-button">Create Todo</button>
-      </form>
+      <span className="todo-form-view">
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            <input type="text" placeholder="Title" value={title} onChange={this.setTitle} />
+          </label>
+          <br />
+          <label>
+            <input type="text" placeholder="Body" value={body} onChange={this.setBody} />
+          </label>
+          <br/>
+          <button className="create-button">Create Todo</button>
+        </form>
+      </span>
     )
   }
 };

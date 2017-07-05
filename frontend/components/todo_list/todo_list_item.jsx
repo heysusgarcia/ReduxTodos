@@ -27,11 +27,12 @@ class TodoListItem extends React.Component {
     const { todo, receiveTodo, removeTodo } = this.props;
 
     return (
-      <li className='todo-list-item-view'>
-       <div
+      <li className='todo-list-item'>
+       <span
+        className="title"
         onClick={this.toggleDetailView}>
         {todo.title}
-       </div>
+      </span>
 
        <button
         className={ todo.done ? "done" : "undone" }

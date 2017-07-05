@@ -1,7 +1,19 @@
 body {
   display: flex;
   justify-content: center;
-  /*align-items: center;*/
+}
+
+#content {
+  /*border-style: solid;*/
+}
+
+.todo-list-view {
+  border-style: solid;
+}
+
+.todo-list-item-view {
+  list-style: none;
+  padding-left: 0;
 }
 
 .todo-detail-view {
@@ -10,4 +22,11 @@ body {
 
 .todo-detail-view.is-active {
   display: block;
+}
+
+.todo-form-view {
+}
+
+.title {
+  font-weight: bold;
 }
