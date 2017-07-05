@@ -1,9 +1,12 @@
 body {
-  display: flex;
-  justify-content: center;
+  font-family: 'Crimson Text', serif;
 }
 
 #content {
+  /*height: 750px;
+  weight: 750px;*/
+  display: flex;
+  justify-content: center;
   /*border-style: solid;*/
 }
 
