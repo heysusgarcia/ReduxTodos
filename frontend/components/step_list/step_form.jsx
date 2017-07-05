@@ -28,7 +28,6 @@ class StepForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const id = uniqueId();
-    debugger;
     const { title, body } = this.state;
     this.props.receiveStep({
       id,
@@ -37,7 +36,10 @@ class StepForm extends React.Component {
       done: false,
       todo_id: this.props.todo_id
     });
-
+    this.setState({
+      title: "",
+      body: ""
+    });
   }
 
   render() {

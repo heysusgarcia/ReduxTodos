@@ -27,10 +27,14 @@ class TodoForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const id = uniqueId();
-    const { title, body } = this.state;
+    let { title, body } = this.state;
 
     const todo = { id, title, body, done: false };
     this.props.receiveTodo(todo);
+    this.setState({
+      title: "",
+      body: ""
+    });
   }
 
   render() {
