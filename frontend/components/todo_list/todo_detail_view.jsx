@@ -23,13 +23,15 @@ class TodoDetailView extends React.Component {
     klass = `todo-detail-view${klass}`;
 
     return (
-      <div className={klass}>
-        <p className="todo-body">{ todo.body }</p>
-        <button
-         className="delete-button"
-         onClick={this.handleDelete}> Delete Todo</button>
+      <span className={klass}>
+        <span className="todo-body">
+          <h5>{ todo.body }</h5>
+          <button
+           className="button delete-button"
+           onClick={this.handleDelete}> Delete Todo</button>
+       </span>
         <StepListContainer todo_id={ todo.id } />
-      </div>
+       </span>
     )
   }
 };

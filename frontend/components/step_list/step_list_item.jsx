@@ -24,7 +24,7 @@ class StepListItem extends React.Component {
   render() {
     const step = this.props.step;
     return (
-      <li className="step-header">
+      <li className="step-item">
         <p className="step-title"> { step.title } </p>
         <p className="step-body"> { step.body } </p>
 
@@ -36,7 +36,7 @@ class StepListItem extends React.Component {
           </button>
 
           <button
-           className="delete-button"
+           className="button delete-button"
            onClick={this.handleDelete}>
            Delete
            </button>

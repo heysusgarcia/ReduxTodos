@@ -50,7 +50,7 @@ class TodoForm extends React.Component {
             <input type="text" placeholder="Body" value={body} onChange={this.setBody} />
           </label>
           <br/>
-          <button className="create-button">Create Todo</button>
+          <button className="button create-button">Create Todo</button>
         </form>
       </span>
     )

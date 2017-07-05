@@ -55,7 +55,7 @@ class StepForm extends React.Component {
         </label>
 
         <br/>
-        <button className="create-button">Create Step</button>
+        <button className="button create-button">Create Step</button>
       </form>
     )
   }
