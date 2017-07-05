@@ -14,7 +14,7 @@ window.stepsByTodoId = stepsByTodoId;
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const preloadedState = localStorage.state ? localStorage.state : {};
+  const preloadedState = localStorage.state ? JSON.parse(localStorage.state) : {};
 
   const store = configureStore(preloadedState);
   ReactDOM.render(<Root store={store}/>, document.getElementById('content'));
