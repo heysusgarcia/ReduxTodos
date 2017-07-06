@@ -46,15 +46,8 @@ class StepForm extends React.Component {
     const { title, body } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          <input type="text" placeholder="Title" value={title} onChange={this.setTitle} />
-        </label>
-        <br/>
-        <label>
-          <input type="text" placeholder="Body" value={body} onChange={this.setBody} />
-        </label>
-
-        <br/>
+        <input type="text" placeholder="Title" value={title} onChange={this.setTitle} />
+        <input type="text" placeholder="Body" value={body} onChange={this.setBody} />
         <button className="create-button">Create Step</button>
       </form>
     )

@@ -32,7 +32,7 @@ class TodoListItem extends React.Component {
         className="todo-header">
         <h3
          onClick={this.toggleDetailView}
-         className={}>
+         className="title">
          {todo.title}
         </h3>
       <button

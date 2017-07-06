@@ -16,11 +16,16 @@ class TodoList extends React.Component {
   );
 
   return (
-    <span className="todo-list-view">
-      <ul className="todo-list-item-view">
-        { todoItems }
-      </ul>
-      <TodoForm receiveTodo={receiveTodo}/>
+    <span>
+      <h1>Redux Todo App</h1>
+      <span className="todo-list-view">
+        <ul className="todo-list-item-view">
+          { todoItems }
+        </ul>
+        <span className="todo-form">
+          <TodoForm receiveTodo={receiveTodo}/>
+        </span>
+      </span>
     </span>
   )}
 };

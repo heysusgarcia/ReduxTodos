@@ -10,6 +10,14 @@ body {
   /*border-style: solid;*/
 }
 
+h1 {
+  text-align: center;
+}
+
+.todo-form {
+  width: 350px;
+}
+
 .todo-list-view {
   display: flex;
   flex-direction: column;
@@ -20,12 +28,14 @@ body {
 .todo-list-item-view {
   list-style: none;
   padding-left: 0;
+  width: 375px;
 }
 
 .todo-list-item {
   border-style: solid;
   margin: 10px;
   padding: 20px;
+  word-wrap: break-word;
 }
 
 .todo-header {
@@ -42,7 +52,10 @@ body {
   display: block;
 }
 
-.todo-form-view {
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 }
 
 .title {
@@ -51,12 +64,14 @@ body {
 
 .step-list {
   list-style: none;
+  word-wrap: break-word;
 }
 
 button {
   border-radius: 2px;
   font-size: 14px;
   border: none;
+  margin:5px;
 }
 
 .delete-button {
