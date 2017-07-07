@@ -1,0 +1,5 @@
+<div id="content">
+  <% flash[:success].try(:each) do |msg| %>
+    <%= msg %>
+  <% end %>
+</div>

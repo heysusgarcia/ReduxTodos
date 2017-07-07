@@ -30,13 +30,17 @@ class Api::TodosController < ApplicationController
 
   def destroy
     @todo = Todo.find(params[:id])
-    @todo.destroy
+    if @todo.destroy
+      render json: { message: "Todo Sucessfully Deleted" }, status: 200
+    else
+      render json: { message: "error #{@todo.errors.full_messages}" }, status: 500
+    end
   end
 
   private
 
   def todo_params
-    params.require(:todo).permit(:title, :body)
+    params.require(:todo).permit(:title, :body, :done)
   end
 
 end
