@@ -13,3 +13,103 @@
  *= require_tree .
  *= require_self
  */
+ body {
+   font-family: 'Crimson Text', serif;
+ }
+
+ #content {
+   /*height: 750px;
+   weight: 750px;*/
+   display: flex;
+   justify-content: center;
+   /*border-style: solid;*/
+ }
+
+ h1 {
+   text-align: center;
+ }
+
+ .todo-form {
+   width: 350px;
+ }
+
+ .todo-list-view {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .todo-list-item-view {
+   list-style: none;
+   padding-left: 0;
+   width: 375px;
+ }
+
+ .todo-list-item {
+   border-style: solid;
+   border-radius: 5px;
+   border-width: 1px;
+   margin: 10px;
+   padding: 20px;
+   word-wrap: break-word;
+ }
+
+ .todo-header {
+   justify-content: space-between;
+   align-items: center;
+   display: flex;
+ }
+
+ .todo-detail-view {
+   display: none;
+ }
+
+ .todo-detail-view.is-active {
+   display: block;
+ }
+
+ form {
+   display: flex;
+   flex-direction: column;
+   margin: 10px;
+ }
+
+ .title {
+   font-weight: bold;
+ }
+
+ .step-list {
+   list-style: none;
+   word-wrap: break-word;
+ }
+
+ button {
+   border-radius: 2px;
+   font-size: 14px;
+   border: none;
+   margin:5px;
+ }
+
+ .delete-button {
+   background-color: #f44336;
+ }
+
+ .create-button {
+   background-color: #008CBA;
+ }
+
+ .done {
+   background-color: #e7e7e7;
+ }
+
+ h3 {
+   cursor: pointer;
+   cursor: hand;
+ }
+
+ /*.todo-body {
+   justify-content: space-between;
+   align-items: center;
+   display: flex;
+ }*/
