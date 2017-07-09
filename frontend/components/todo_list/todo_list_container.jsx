@@ -15,7 +15,8 @@ const mapStateToProps = (state) => ({
 // these map to our event/action functions in react
 const mapDispatchToProps = (dispatch, { step }) => ({
   receiveTodo: (todo) => dispatch(receiveTodo(todo)),
-  removeTodo: (todo) => dispatch(removeTodo(todo))
+  removeTodo: (todo) => dispatch(removeTodo(todo)),
+  fetchTodos: (todos) => dispatch(fetchTodos(todos))
 });
 
 const TodoListContainer = connect(
