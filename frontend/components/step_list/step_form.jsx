@@ -1,4 +1,4 @@
-import { uniqueId } from '../../utils/idGenerator';
+import { uniqueId } from '../../util/idGenerator';
 import React from 'react';
 
 class StepForm extends React.Component {

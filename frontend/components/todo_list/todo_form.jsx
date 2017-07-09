@@ -1,4 +1,4 @@
-import { uniqueId } from '../../utils/idGenerator';
+import { uniqueId } from '../../util/idGenerator';
 import React from 'React';
 
 class TodoForm extends React.Component {
