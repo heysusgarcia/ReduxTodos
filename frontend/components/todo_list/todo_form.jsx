@@ -28,7 +28,6 @@ class TodoForm extends React.Component {
     e.preventDefault();
     const id = uniqueId();
     let { title, body } = this.state;
-
     const todo = { title, body, done: false };
     this.props.createTodo({ todo }).then(
       () => this.setState({ title: "", body: ""})
@@ -36,11 +35,12 @@ class TodoForm extends React.Component {
   }
 
   render() {
-    const { title, body } = this.props;
+    const { title, body } = this.state;
     return (
       <form
        onSubmit={this.handleSubmit}
        className="todo-form-view">
+        <span>{this.props.errors}</span>
         <input className="input" placeholder="Title" value={title} onChange={this.setTitle} />
         <input className="input" placeholder="Body" value={body} onChange={this.setBody} />
         <button className="create-button">Create Todo</button>
