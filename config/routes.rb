@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: "static_pages#root"
 
   namespace :api do
-    resources :todos, only: [:index, :show, :create, :destroy, :update], defaults: { format: 'json' }
+    resources :todos, only: [:index, :show, :create, :destroy, :update], defaults: { format: 'json' } do
+      resources :steps, only: [:index, :show, :create, :destroy, :update], defaults: { format: 'json' }
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

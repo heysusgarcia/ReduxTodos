@@ -1,5 +1,4 @@
 class Api::TodosController < ApplicationController
-
   def index
     @todos = Todo.all
     render json: @todos
@@ -42,5 +41,4 @@ class Api::TodosController < ApplicationController
   def todo_params
     params.require(:todo).permit(:title, :body, :done)
   end
-
 end
