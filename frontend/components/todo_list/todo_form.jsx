@@ -29,12 +29,10 @@ class TodoForm extends React.Component {
     const id = uniqueId();
     let { title, body } = this.state;
 
-    const todo = { id, title, body, done: false };
-    this.props.receiveTodo(todo);
-    this.setState({
-      title: "",
-      body: ""
-    });
+    const todo = { title, body, done: false };
+    this.props.createTodo({ todo }).then(
+      () => this.setState({ title: "", body: ""})
+    );
   }
 
   render() {
@@ -43,8 +41,8 @@ class TodoForm extends React.Component {
       <form
        onSubmit={this.handleSubmit}
        className="todo-form-view">
-        <input type="text" placeholder="Title" value={title} onChange={this.setTitle} />
-        <input type="text" placeholder="Body" value={body} onChange={this.setBody} />
+        <input className="input" placeholder="Title" value={title} onChange={this.setTitle} />
+        <input className="input" placeholder="Body" value={body} onChange={this.setBody} />
         <button className="create-button">Create Todo</button>
       </form>
     )

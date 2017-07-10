@@ -9,7 +9,7 @@ class TodoList extends React.Component {
   }
 
   render() {
-    const { todos, receiveTodo, removeTodo } = this.props;
+    const { todos, createTodo, removeTodo } = this.props;
     const todoItems = todos.map(todo => (
       <TodoListItem
        key={`todo-list-item${todo.id}`}
@@ -27,7 +27,7 @@ class TodoList extends React.Component {
           { todoItems }
         </ul>
         <span className="todo-form">
-          <TodoForm receiveTodo={receiveTodo}/>
+          <TodoForm createTodo={createTodo}/>
         </span>
       </span>
     </span>
