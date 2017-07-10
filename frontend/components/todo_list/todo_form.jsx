@@ -36,11 +36,18 @@ class TodoForm extends React.Component {
 
   render() {
     const { title, body } = this.state;
+
+    const errors = this.props.errors.map((e, i) => (
+      <li key={i}>{e}</li>
+    )
+  );
     return (
       <form
        onSubmit={this.handleSubmit}
        className="todo-form-view">
-        <span>{this.props.errors}</span>
+        <span className="errors-view">
+          <ul>{ errors }</ul>
+        </span>
         <input className="input" placeholder="Title" value={title} onChange={this.setTitle} />
         <input className="input" placeholder="Body" value={body} onChange={this.setBody} />
         <button className="create-button">Create Todo</button>
