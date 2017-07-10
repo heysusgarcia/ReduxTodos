@@ -23,10 +23,10 @@ class TodoListItem extends React.Component {
   }
 
   render() {
-    const { todo, updateTodo } = this.props;
+    const { todo, updateTodo} = this.props;
     let detail;
     if (this.state.detail) {
-      detail = <TodoDetailViewContainer todo={todo} />;
+      detail = <TodoDetailViewContainer todo={todo}/>;
     }
 
     return (

@@ -8,7 +8,8 @@ import { allTodos } from '../../reducers/selectors';
 // maps slice of state to props object
 const mapStateToProps = (state) => ({
   todos: allTodos(state),
-  errors: state.errors
+  errors: state.errors,
+  state
 });
 
 // create action dispatcher
