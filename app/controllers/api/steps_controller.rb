@@ -29,7 +29,7 @@ class Api::StepsController < ApplicationController
 
   def destroy
     @step = Step.find(params[:id])
-    if @step.destroy(step_params)
+    if @step
       render json: @step, status: 200
     else
       render json:  { message: "error #{@step.errors.full_messages}"}, status: 500
