@@ -3,16 +3,11 @@ import RootReducer  from '../reducers/root_reducer';
 import thunkMiddleware from '../middleware/thunk_middleware';
 
 const configureStore = (preloadedState = {}) => {
-  const store = createStore(
+  return createStore(
     RootReducer,
     preloadedState,
     applyMiddleware(thunkMiddleware)
   );
-
-  store.subscribe(() => {
-    localStorage.state = JSON.stringify(store.getState());
-  })
-  return store;
 };
 
 export default configureStore;

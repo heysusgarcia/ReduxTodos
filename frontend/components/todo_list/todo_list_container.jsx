@@ -15,7 +15,6 @@ const mapStateToProps = (state) => ({
 // these map to our event/action functions in react
 const mapDispatchToProps = (dispatch, { step }) => ({
   createTodo: (todo) => dispatch(createTodo(todo)),
-  // deleteTodo: (todo) => dispatch(deleteTodo(todo)),
   fetchTodos: (todos) => dispatch(fetchTodos(todos)),
   updateTodo: (todo) => dispatch(updateTodo(todo))
 });

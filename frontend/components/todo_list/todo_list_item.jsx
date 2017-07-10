@@ -6,9 +6,8 @@ class TodoListItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = { detail: false };
-
-    this.toggleDone = this.toggleDone.bind(this);
     this.toggleDetailView = this.toggleDetailView.bind(this);
+    this.toggleDone = this.toggleDone.bind(this);
   }
 
   toggleDone(e) {
@@ -35,14 +34,14 @@ class TodoListItem extends React.Component {
        <span
         className="todo-header">
         <h3
-         onClick={this.toggleDetailView}
          className="title">
-         {todo.title}
+         <a onClick={this.toggleDetailView}>{todo.title}</a>
         </h3>
-      <button
-       className={ todo.done ? "done" : "undone" }
-       onClick={this.toggleDone}>{todo.done ? "Undo" : "Done"}
-      </button>
+        <button
+         className={ todo.done ? "done" : "undone" }
+         onClick={this.toggleDone}>
+         {todo.done ? "Undo" : "Done"}
+        </button>
     </span>
       {detail}
       </li>

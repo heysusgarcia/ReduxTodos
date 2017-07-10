@@ -2,37 +2,17 @@ import React from 'React';
 import StepListContainer from '../step_list/step_list_container';
 
 class TodoDetailView extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.handleDelete = this.handleDelete.bind(this);
-  }
-
-  handleDelete(e) {
-    e.preventDefault();
-    this.props.deleteTodo(this.props.todo);
-  }
-
   render() {
-    const { todo, detail } = this.props;
-    // let klass = '';
-    //
-    // if (detail) {
-    //   klass = ' is-active';
-    // }
-    // klass = `todo-detail-view${klass}`;
+    const { todo, deleteTodo } = this.props;
 
     return (
-      <span>
-        <span className="todo-body">
-          <h5>{ todo.body }</h5>
-          <button
-           className="delete-button"
-           onClick={this.handleDelete}> Delete Todo
-          </button>
-       </span>
+      <span className="todo-body">
+        <h5>{ todo.body }</h5>
         <StepListContainer todo_id={ todo.id } />
-       </span>
+        <button className="delete-button" onClick={deleteTodo}>
+          Delete Todo
+        </button>
+     </span>
     )
   }
 };

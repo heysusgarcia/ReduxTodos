@@ -33,15 +33,9 @@ export const createTodo = todo => dispatch => (
 );
 
 export const updateTodo = todo => dispatch => (
-  TodoAPIUtil.updateTodo(todo).then(todo => {
-    dispatch(receiveTodo(todo)); dispatch(clearErrors())},
-    error => dispatch(receiveErrors(error.responseJSON))
-  )
+  TodoAPIUtil.updateTodo(todo).then(todo => dispatch(receiveTodo(todo)))
 );
 
 export const deleteTodo = todo => dispatch => (
-  TodoAPIUtil.deleteTodo(todo).then(todo => {
-    dispatch(removeTodo(todo)); dispatch(clearErrors())},
-    error => dispatch(receiveErrors(error.responseJSON))
-  )
+  TodoAPIUtil.deleteTodo(todo).then(todo => dispatch(removeTodo(todo)))
 );
