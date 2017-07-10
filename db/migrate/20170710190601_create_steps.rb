@@ -8,5 +8,7 @@ class CreateSteps < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :steps, :todo_id
   end
 end
