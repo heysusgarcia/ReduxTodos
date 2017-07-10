@@ -21,5 +21,12 @@ export const removeStep = step => ({
 });
 
 export const fetchSteps = todoId => dispatch => (
-  StepAPIUtil.fetchStep(todoId).then(steps => dispatch(receiveSteps(steps)))
+  StepAPIUtil.fetchSteps(todoId).then(steps => dispatch(receiveSteps(steps)))
+);
+
+export const createStep = step => dispatch => (
+  StepAPIUtil.createStep(step).then(step => {
+    dispatch(receiveStep(step)); dispatch(clearErrors())},
+    error => dispatch(receiveErrors(error.responseJSON))
+  )
 );
