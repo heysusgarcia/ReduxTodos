@@ -15,7 +15,7 @@ class TodoListItem extends React.Component {
     e.preventDefault();
     const done = { done : !this.props.todo.done };
     const updatedTodo = merge({}, this.props.todo, done);
-    this.props.receiveTodo(updatedTodo);
+    this.props.updateTodo(updatedTodo);
   }
 
   toggleDetailView(e) {
@@ -24,7 +24,7 @@ class TodoListItem extends React.Component {
   }
 
   render() {
-    const { todo, receiveTodo, removeTodo } = this.props;
+    const { todo, updateTodo, removeTodo } = this.props;
 
     return (
       <li className='todo-list-item'>
