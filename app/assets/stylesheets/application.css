@@ -61,13 +61,13 @@
    display: flex;
  }
 
- .todo-detail-view {
+ /*.todo-detail-view {
    display: none;
  }
 
  .todo-detail-view.is-active {
    display: block;
- }
+ }*/
 
  form {
    display: flex;

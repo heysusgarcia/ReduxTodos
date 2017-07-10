@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import TodoList from './todo_list';
 
-import { receiveTodos, createTodo, updateTodo } from '../../actions/todo_actions';
+import { receiveTodos, createTodo, updateTodo, deleteTodo } from '../../actions/todo_actions';
 import { allTodos } from '../../reducers/selectors';
 
 
@@ -15,7 +15,7 @@ const mapStateToProps = (state) => ({
 // these map to our event/action functions in react
 const mapDispatchToProps = (dispatch, { step }) => ({
   createTodo: (todo) => dispatch(createTodo(todo)),
-  removeTodo: (todo) => dispatch(removeTodo(todo)),
+  // deleteTodo: (todo) => dispatch(deleteTodo(todo)),
   fetchTodos: (todos) => dispatch(fetchTodos(todos)),
   updateTodo: (todo) => dispatch(updateTodo(todo))
 });
