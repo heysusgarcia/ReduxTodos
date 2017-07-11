@@ -21,7 +21,7 @@ class TodoList extends React.Component {
 
   return (
     <span>
-      <h1>Redux Todo App</h1>
+      <h1>Redux + React on Rails Todo App</h1>
       <span className="todo-list-view">
         <ul className="todo-list-item-view">
           { todoItems }
