@@ -11,13 +11,14 @@ class StepListItem extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.removeStep(this.props.step);
+    this.props.deleteStep(this.props.step);
   }
 
   toggleStep(e) {
     e.preventDefault();
     const done = { done: !this.props.step.done };
     const step = merge({}, this.props.step, done);
+    debugger;
     this.props.updateStep( step );
   }
 
