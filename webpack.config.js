@@ -22,9 +22,6 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    alias: {
-      'react': path.join(__dirname, 'node_modules', 'react')
-    },
     extensions: ['.js', '.jsx', '*']
   }
 };
