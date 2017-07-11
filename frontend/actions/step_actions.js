@@ -30,3 +30,11 @@ export const createStep = (todoId, step) => dispatch => (
     error => dispatch(receiveErrors(error.responseJSON))
   )
 );
+
+export const updateStep = step => dispatch => (
+  StepAPIUtil.updateStep(step).then(step => dispatch(receiveStep(step)))
+);
+
+export const deleteStep = step => dispatch => (
+  StepAPIUtil.deleteStep(step).then(step => dispatch(removeStep(step)))
+);

@@ -26,4 +26,4 @@ export const deleteTodo = todo => (
     method: 'DELETE',
     url: `api/todos/${todo.id}`
   })
-)
+);

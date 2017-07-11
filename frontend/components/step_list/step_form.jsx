@@ -32,9 +32,9 @@ class StepForm extends React.Component {
       title,
       body,
       done: false,
-      todo_id: this.props.todo_id
+      todo_id: this.props.todoId
     }
-    this.props.createStep( this.props.todo_id, {step} )
+    this.props.createStep( this.props.todoId, {step} )
     .then(
       () => this.setState({ title: "", body: "" })
     );

@@ -17,8 +17,8 @@ class StepListItem extends React.Component {
   toggleStep(e) {
     e.preventDefault();
     const done = { done: !this.props.step.done };
-    const updatedStep = merge({}, this.props.step, done);
-    this.props.receiveStep(updatedStep);
+    const step = merge({}, this.props.step, done);
+    this.props.updateStep( step );
   }
 
   render() {

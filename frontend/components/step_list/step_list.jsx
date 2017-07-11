@@ -6,7 +6,7 @@ const StepList = ({ steps, todo_id, createStep }) =>{
   const stepItems = steps.map(step => (
     <StepListItemContainer
      key={step.id.toString()}
-     step={step} />
+     step={step}/>
    ));
 
    return (
