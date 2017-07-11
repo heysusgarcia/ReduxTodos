@@ -32,7 +32,7 @@ class Api::TodosController < ApplicationController
     if @todo.destroy
       render json: @todo , status: 200
     else
-      render json: { message: "error #{@todo.errors.full_messages}" }, status: 500
+      render json: @todo.errors.full_messages, status: 500
     end
   end
 

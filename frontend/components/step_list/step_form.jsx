@@ -1,4 +1,3 @@
-import { uniqueId } from '../../util/idGenerator';
 import React from 'react';
 
 class StepForm extends React.Component {
@@ -27,19 +26,18 @@ class StepForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const id = uniqueId();
     const { title, body } = this.state;
-    this.props.receiveStep({
-      id,
+    debugger;
+    const step = {
       title,
       body,
       done: false,
       todo_id: this.props.todo_id
-    });
-    this.setState({
-      title: "",
-      body: ""
-    });
+    }
+    this.props.createStep( {step} )
+    .then(
+      () => this.setState({ title: "", body: "" })
+    );
   }
 
   render() {
