@@ -27,7 +27,6 @@ class StepForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const { title, body } = this.state;
-    debugger;
     const step = {
       title,
       body,

@@ -13,9 +13,11 @@ class TodoDetailView extends React.Component {
       <span className="todo-body">
         <h5>{ todo.body }</h5>
         <StepListContainer todo_id={ todo.id } />
-        <button className="delete-button" onClick={deleteTodo}>
-          Delete Todo
-        </button>
+        <span className="todo-delete-button-view">
+          <button className="delete-button" onClick={deleteTodo}>
+            Delete Todo
+          </button>
+        </span>
      </span>
     )
   }

@@ -84,6 +84,11 @@
    word-wrap: break-word;
  }
 
+ .todo-delete-button-view {
+   display: flex;
+   flex-direction: column;
+ }
+
  button {
    border-radius: 2px;
    font-size: 14px;
