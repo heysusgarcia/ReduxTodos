@@ -10,8 +10,8 @@ const mapStateToProps = (state, { todo_id }) => ({
 });
 
 
-const mapDispatchToProps = dispatch => ({
-  createStep: step => dispatch(createStep(step))
+const mapDispatchToProps = (dispatch) => ({
+  createStep: (todo_id, step) => dispatch(createStep(todo_id, step))
 });
 
 const StepListContainer = connect(
