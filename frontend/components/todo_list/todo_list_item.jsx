@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import TodoDetailViewContainer from './todo_detail_view_container';
 import merge from 'lodash/merge';
 
