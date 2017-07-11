@@ -18,7 +18,6 @@ class StepListItem extends React.Component {
     e.preventDefault();
     const done = { done: !this.props.step.done };
     const step = merge({}, this.props.step, done);
-    debugger;
     this.props.updateStep( step );
   }
 
