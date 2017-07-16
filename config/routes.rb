@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     resources :steps, only: [:update, :destroy]
     resource :session
+    resources :users, only: [:create, :new]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
