@@ -4,8 +4,9 @@ class UsersController < ApplicationController
 
     if @user.save
       render json: @user
+      # redirect to todos view? 
     else
-      render json: @user.errors.full_messages, status: 422
+      render :new
     end
   end
 

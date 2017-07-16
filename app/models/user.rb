@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true
   validates :password_digest, presence: { message: "Password can't be blank" }
-  validates :password_digest, length: { minimum: 6, allow_nil: true }
+  validates :password, length: { minimum: 6, allow_nil: true }
 
   def password=(password)
     @password = password
