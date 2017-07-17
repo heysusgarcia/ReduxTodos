@@ -1,16 +1,16 @@
 class Api::TodosController < ApplicationController
   def index
-    @todos = current_user.todos.all
+    @todos = current_user.todos
     render json: @todos
   end
 
   def show
-    @todo = Todo.find(params[:id])
+    @todo = current_user.todos.find(params[:id])
     render json: @todo
   end
 
   def create
-    @todo = Todo.new(todo_params)
+    @todo = current_user.todos.new(todo_params)
     if @todo.save
       render json: @todo
     else
@@ -19,7 +19,7 @@ class Api::TodosController < ApplicationController
   end
 
   def update
-    @todo = Todo.find(params[:id])
+    @todo = current_user.todos.find(params[:id])
     if @todo.update(todo_params)
       render json: @todo, status: 200
     else
@@ -28,7 +28,7 @@ class Api::TodosController < ApplicationController
   end
 
   def destroy
-    @todo = Todo.find(params[:id])
+    @todo = current_user.todos.find(params[:id])
     if @todo.destroy
       render json: @todo , status: 200
     else

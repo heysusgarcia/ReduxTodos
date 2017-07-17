@@ -1,7 +1,7 @@
 <h1>Log in</h1>
 
 <ul>
-  <% @user.errors.full_messages.each do |err_msg| %>
+  <% flash[:errors].each do |err_msg| %>
     <li><%= err_msg %></li>
   <% end %>
 </ul>
@@ -10,7 +10,7 @@
   <input type="hidden"
          name="authenticity_token"
          value="<%= form_authenticity_token %>">
-         
+
   <label for="user_username">Usernmae</label>
   <input type="text" name="user[username]" id="user_username">
   <br />
