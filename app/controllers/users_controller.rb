@@ -4,7 +4,8 @@ class UsersController < ApplicationController
 
     if @user.save
       render json: @user
-      # redirect to todos view? 
+      # redirect to todos view?
+      # log_in user when they successfully sign up --- use log_in! method
     else
       render :new
     end
