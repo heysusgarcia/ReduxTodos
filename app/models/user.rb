@@ -7,10 +7,9 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
 
-  def self.find_by_credentials(username, password)
-    user = User.find_by_username(username)
-    return nil if user.nil?
-    user.is_password?(password) ? user : nil
+  def self.find_by_credentials(user_params)
+    user = User.find_by_username(user_params[:username])
+    user && user.is_password?(user_params[:password]) ? user : nil
   end
 
   def password=(password)

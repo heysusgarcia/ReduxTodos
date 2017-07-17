@@ -1,5 +1,11 @@
 <h1>Log in</h1>
 
+<ul>
+  <% @user.errors.full_messages.each do |err_msg| %>
+    <li><%= err_msg %></li>
+  <% end %>
+</ul>
+
 <form action="/session" method="POST">
   <label for="user_username">Usernmae</label>
   <input type="text" name="user[username]" id="user_username">
