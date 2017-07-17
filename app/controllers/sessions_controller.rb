@@ -1,22 +1,28 @@
 class SessionsController < ApplicationController
   before_action :redirect_if_logged_in, except: :destroy
-  def create
-    @user = User.find_by_credentials(
-      params[:user][:username],
-      params[:user][:password]
-    )
 
-    if @user.nil?
-      render :new
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.find_by_credentials(user_params)
+    if @user
+      login!(@user)
+      redirect_to root_url
     else
-      session[:user_id] = @user.id
-      # sign in
+      @user = User.new
+      flash.now[:errors] = "Invalid username/password combination"
     end
   end
 
   def destroy
+    logout!
+    redirect_to new_session_url
   end
 
-  def new
+  private
+  def user_params
+    params.require(:user).permit(:username, :password)
   end
 end
