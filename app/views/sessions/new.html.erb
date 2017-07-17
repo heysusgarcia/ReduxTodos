@@ -1,8 +1,10 @@
 <h1>Log in</h1>
 
 <ul>
-  <% flash[:errors].each do |err_msg| %>
-    <li><%= err_msg %></li>
+  <% unless flash.now[:errors].nil?%>
+    <% flash.now[:errors].each do |err_msg| %>
+      <li><%= err_msg %></li>
+    <% end %>
   <% end %>
 </ul>
 
