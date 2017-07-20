@@ -10,11 +10,19 @@ export const receiveCurrentUser = currentUser => ({
   currentUser
 });
 
+export const logoutCurrentUser = () => ({
+  type: LOGOUT
+});
 
-export const fetchCurrentUser = () => dispatch => (
-  SessionAPIUtil.fetchCurrentUser().then(currentUser => dispatch(receiveCurrentUser(currentUser)))
+
+export const signup = (currentUser) => dispatch => (
+  SessionAPIUtil.signup(currentUser).then(currentUser => dispatch(receiveCurrentUser(currentUser)))
 );
 
-export const logoutUser = (currentUser) => dispatch => (
-  SessionAPIUtil.logoutUser(currentUser).then(currentUser => dispatch(logout(currentUser)))
+export const login = (currentUser) => dispatch => (
+  SessionAPIUtil.login(currentUser).then(currentUser => dispatch(receiveCurrentUser(currentUser)))
+);
+
+export const logout = () => dispatch => (
+  SessionAPIUtil.logout().then(() => dispatch(logoutCurrentUser()))
 );
