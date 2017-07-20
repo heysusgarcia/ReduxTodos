@@ -10,10 +10,6 @@ export const receiveCurrentUser = currentUser => ({
   currentUser
 });
 
-export const logout = currentUser => ({
-  type: LOGOUT
-});
-
 
 export const fetchCurrentUser = () => dispatch => (
   SessionAPIUtil.fetchCurrentUser().then(currentUser => dispatch(receiveCurrentUser(currentUser)))
